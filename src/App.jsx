@@ -20,7 +20,7 @@ function App() {
   return (
     <BrowserRouter>
     <AuthProvider>
-      <ProyectosProvider>
+      <ProyectosProvider> 
             <Routes>
               <Route path='/' element={<AuthLayout/>}>
                   <Route index element={<Login/>}/>

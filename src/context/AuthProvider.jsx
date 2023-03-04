@@ -28,7 +28,7 @@ const AuthProvider = ({children}) => {
         }
         
         try {
-            const {data} = await axios('http://localhost:4000/api/usuarios/perfil', config)
+            const {data} = await axios('https://uptaskmernbackend-production-e28a.up.railway.app/api/usuarios/perfil', config)
             setAuth(data)
             // navigate('/proyectos')
         } catch (error) {
