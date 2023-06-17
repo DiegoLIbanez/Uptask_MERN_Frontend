@@ -4,6 +4,7 @@ import Alerta from '../components/Alerta'
 import axios from 'axios'
 import useAuth from '../hooks/useAuth'
 
+
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -25,11 +26,11 @@ const navigate = useNavigate()
         }
 
         try {
-          const {data} = await axios.post('http://localhost:4000/api/usuarios/login', {email,password})
+          const {data} = await axios.post(`https://uptaskmernbackend-production-0971.up.railway.app/api/usuarios/login`, {email,password})
           localStorage.setItem('token', data.token)
           setAuth(data)
           navigate('/proyectos')
-
+          console.log(data)
         } catch (error) {
           console.log(error)
           setAlerta({
@@ -38,6 +39,7 @@ const navigate = useNavigate()
           })
         }
   }
+
 
   const {msg} = alerta
   return (

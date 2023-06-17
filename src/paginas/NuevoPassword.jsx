@@ -17,7 +17,7 @@ const NuevoPassword = () => {
     const comprobarToken = async () => {
       try {
         //TODO:Mover hacia un cliente axios
-          await axios(`http://localhost:4000/api/usuarios/olvide-password/${token}`)
+          await axios(`https://uptaskmernbackend-production-0971.up.railway.app/api/usuarios/olvide-password/${token}`)
           setTokenValido(true)
       } catch (error) {
         setAlerta({
@@ -41,7 +41,7 @@ const handleSubmit= async (event) => {
       return
     }
     try {
-        const url = `http://localhost:4000/api/usuarios/olvide-password/${token}`
+        const url = `https://uptaskmernbackend-production-0971.up.railway.app/api/usuarios/olvide-password/${token}`
         const {data} = await axios.post(url,{password})
         setAlerta({
           msg:data.msg,

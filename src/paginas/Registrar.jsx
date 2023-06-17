@@ -42,7 +42,7 @@ const handleSubmit = async (event) => {
     setAlerta({})
 
     try {
-        const {data} = await axios.post('http://localhost:4000/api/usuarios', {nombre,email,password})
+   const {data} = await axios.post(`https://uptaskmernbackend-production-0971.up.railway.app/api/usuarios`, {nombre,email,password})
         setAlerta({
           msg: data.msg,
           error: false

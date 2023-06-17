@@ -13,7 +13,7 @@ const ConfirmarCuenta = () => {
   useEffect(() => {
     const confirmarCuenta = async () => {
       try {
-          const url = `http://localhost:4000/api/usuarios/confirmar/${id}`
+          const url = `https://uptaskmernbackend-production-0971.up.railway.app/api/usuarios/confirmar/${id}`
           const {data} = await axios(url)
 
           setAlerta({

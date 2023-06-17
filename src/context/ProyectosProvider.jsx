@@ -38,7 +38,7 @@ const ProyectosProvider = ({children}) => {
                     }
                 }
 
-                const {data} = await axios(`https://uptaskmernbackend-production-e28a.up.railway.app/api/proyectos`, config)
+                const {data} = await axios(`https://uptaskmernbackend-production-0971.up.railway.app/api/proyectos`, config)
                 setProyectos(data)
 
             } catch (error) {
@@ -82,7 +82,7 @@ const ProyectosProvider = ({children}) => {
                 }
             }
             
-            const {data} = await axios.put(`https://uptaskmernbackend-production-e28a.up.railway.app/api/proyectos/${proyecto.id}` ,proyecto,config)
+            const {data} = await axios.put(`https://uptaskmernbackend-production-0971.up.railway.app/api/proyectos/${proyecto.id}` ,proyecto,config)
 
             const proyectosActualizados = proyectos.map(proyectoState => proyectoState._id
                 === data._id ? data : proyectoState)    
@@ -116,7 +116,7 @@ const ProyectosProvider = ({children}) => {
                 }
             }
 
-            const {data} = await axios.post(`https://uptaskmernbackend-production-e28a.up.railway.app/api/proyectos`, proyecto, config)
+            const {data} = await axios.post(`https://uptaskmernbackend-production-0971.up.railway.app/api/proyectos`, proyecto, config)
             setProyectos([...proyectos, data])
             
             setAlerta({
@@ -151,7 +151,7 @@ const ProyectosProvider = ({children}) => {
                     }
                 }
 
-                const {data} = await axios(`https://uptaskmernbackend-production-e28a.up.railway.app/api/proyectos/${id}`, config)
+                const {data} = await axios(`https://uptaskmernbackend-production-0971.up.railway.app/api/proyectos/${id}`, config)
                 setProyecto(data)
                 setAlerta({})
         } catch (error) {
@@ -184,7 +184,7 @@ const ProyectosProvider = ({children}) => {
             }
         }
 
-        const {data} = await axios.delete(`https://uptaskmernbackend-production-e28a.up.railway.app/api/proyectos/${id}`,config)
+        const {data} = await axios.delete(`https://uptaskmernbackend-production-0971.up.railway.app/api/proyectos/${id}`,config)
 
         const proyectosAcualizados = proyectos.filter(proyectoState => proyectoState._id !== id)
         setProyectos(proyectosAcualizados)
@@ -233,7 +233,7 @@ const ProyectosProvider = ({children}) => {
             }
         }
 
-        const {data} = await axios.post('https://uptaskmernbackend-production-e28a.up.railway.app/api/tareas',tarea ,config)
+        const {data} = await axios.post(`https://uptaskmernbackend-production-0971.up.railway.app/api/tareas`,tarea ,config)
         console.log(data)
 
         const proyectoActualizado = {...proyecto}
@@ -263,7 +263,7 @@ const ProyectosProvider = ({children}) => {
                     }
                 }
 
-                const {data} = await axios.put(`https://uptaskmernbackend-production-e28a.up.railway.app/api/tareas/${tarea.id}`, tarea, config)
+                const {data} = await axios.put(`https://uptaskmernbackend-production-0971.up.railway.app/api/tareas/${tarea.id}`, tarea, config)
                 
 
                 // todo: Actualizar el dom
@@ -303,7 +303,7 @@ const ProyectosProvider = ({children}) => {
                 }
             }
 
-            const {data} = await axios.delete(`https://uptaskmernbackend-production-e28a.up.railway.app/api/tareas/${tarea._id}`, config)
+            const {data} = await axios.delete(`https://uptaskmernbackend-production-0971.up.railway.app/api/tareas/${tarea._id}`, config)
             setAlerta({
                 msg: data.msg,
                 error:false
@@ -340,7 +340,7 @@ const ProyectosProvider = ({children}) => {
                 }
             }
 
-            const {data} = await axios.post('https://uptaskmernbackend-production-e28a.up.railway.app/api/proyectos/colaboradores', {email}, config)
+            const {data} = await axios.post(`https://uptaskmernbackend-production-0971.up.railway.app/api/proyectos/colaboradores`, {email}, config)
             
             setColaborador(data)
             setAlerta({})
@@ -372,7 +372,7 @@ const ProyectosProvider = ({children}) => {
                 }
             }
 
-            const {data} = await axios.post(`https://uptaskmernbackend-production-e28a.up.railway.app/api/proyectos/colaboradores/${proyecto._id}`, email, config)
+            const {data} = await axios.post(`https://uptaskmernbackend-production-0971.up.railway.app/api/proyectos/colaboradores/${proyecto._id}`, email, config)
             
             setAlerta({
                 msg: data.msg,
@@ -417,7 +417,7 @@ const ProyectosProvider = ({children}) => {
                 }
             }
 
-            const {data} = await axios.post(`https://uptaskmernbackend-production-e28a.up.railway.app/api/proyectos/eliminar-colaborador/${proyecto._id}`, {id: colaborador._id}, config)
+            const {data} = await axios.post(`https://uptaskmernbackend-production-0971.up.railway.app/api/proyectos/eliminar-colaborador/${proyecto._id}`, {id: colaborador._id}, config)
              
             const proyectoActualizado = {...proyecto}
             proyectoActualizado.colaboradores = proyectoActualizado.colaboradores.filter
@@ -455,7 +455,7 @@ const ProyectosProvider = ({children}) => {
                 }
             }
 
-            const {data} = await axios.post(`https://uptaskmernbackend-production-e28a.up.railway.app/api/tareas/estado/${id}`, {}, config)
+            const {data} = await axios.post(`https://uptaskmernbackend-production-0971.up.railway.app/api/tareas/estado/${id}`, {}, config)
             const proyectoActualizado = {...proyecto}
             proyectoActualizado.tareas = proyectoActualizado.tareas.map( tareaState => 
                 tareaState._id === data._id ? data : tareaState)

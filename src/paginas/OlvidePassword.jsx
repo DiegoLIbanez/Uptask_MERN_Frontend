@@ -20,7 +20,7 @@ const OlvidePassword = () => {
    try { 
           //TODO: Mover hacia un cliente axios
 
-          const {data} = await axios.post(`http://localhost:4000/api/usuarios/olvide-password`,{email})
+          const {data} = await axios.post(`https://uptaskmernbackend-production-0971.up.railway.app/api/usuarios/olvide-password`,{email})
           setAlerta({
             msg:data.msg,
             error:false
